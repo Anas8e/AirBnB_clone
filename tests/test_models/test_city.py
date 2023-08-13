@@ -61,12 +61,12 @@ class TestCity(unittest.TestCase):
         self.assertEqual(datetime, type(City().created_at))
 
     def test_city_updated_at_is_datetime(self):
-        """test that the City attribute updated_at is an instance 
+        """test that the City attribute updated_at is an instance
         of datetime"""
         self.assertEqual(datetime, type(City().updated_at))
 
     def test_city_name_attr_is_public_class_attr(self):
-        """test that the City attribute name is public class 
+        """test that the City attribute name is public class
         attribute"""
         model = City()
         self.assertNotIn("name", model.__dict__)
@@ -102,7 +102,7 @@ class TestCity(unittest.TestCase):
         self.assertEqual(model.updated_at.isoformat(), dt)
 
     def test_city_instantiation_with_None_kwargs(self):
-        """test User instatiation with a dictionary whose values 
+        """test User instatiation with a dictionary whose values
         are None"""
         with self.assertRaises(TypeError):
             City(id=None, created_at=None, updated_at=None)
